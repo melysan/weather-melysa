@@ -275,47 +275,54 @@
 }
 
 .weatherChecker {
-  font-size: 2em;
-  font-weight: 900;
+  font-size: 3em;
+  font-weight: 500;
   padding: 0.5em;
   background: linear-gradient(to right,
-      rgb(72, 8, 88),
-      hsl(204 100% 59%));
+      rgb(197, 127, 214),
+      rgb(39, 118, 221));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+  text-shadow: rgb(255, 255, 255) -2px -2px 0px;
 }
 
 .countryName {
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: 400;
+  color: #2529a5;
+  background: linear-gradient(to right,
+      rgb(197, 127, 214),
+      rgb(39, 118, 221));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .inputBox {
-  background-color: #F5F5F5;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 1em 2em 1em 1em;
   border: none;
+  font-size: 16px;
 }
 
 .inputBox:focus {
   border: none;
-  border-bottom: 3px solid #ffed62;
+  border-bottom: 3px solid #5c8df7;
 }
 
 .mainContainer {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 4rem;
   border-radius: 10px;
+  border: 2px solid white;
 }
 
 .columnContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
 }
 
 .rowContainer {
@@ -332,25 +339,38 @@
 }
 
 .mainTemperature {
-  font-size: 50px;
-  font-weight: 700;
+  font-size: 3em;
+  font-weight: 900;
+  text-shadow: #ffffff 0px 0px 2px;
+  color: rgb(39, 118, 221);
 }
 
 .feelsLike {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: #5588cf;
   padding-top: 0.5em;
 
 }
 
-.mainDescription {
-  font-size: 20px;
+.windGust {
+  font-size: 14px;
+  font-weight: 400;
+  color: #5588cf;
   padding-top: 0.5em;
+}
+
+.mainDescription {
+  font-size: 2.2em;
+  color: #1259bd;
+  text-shadow: #ffffff 0px 0px 3px;
+
 }
 
 .weatherDescription {
   font-size: 16px;
   padding-top: 0.5em;
+  font-style: italic;
+  color: #1259bd;
 
 }

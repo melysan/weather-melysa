@@ -54,7 +54,7 @@ export default function Home() {
             <input className={styles.inputBox}
               value={location}
               onChange={event => setLocation(event.target.value)}
-              placeholder="What city?"
+              placeholder="Which city to look for?"
               onKeyDown={searchLocation}
               type="text"
             />
@@ -74,10 +74,10 @@ export default function Home() {
                       <Image loader={() => src} src={src} width={50} height={50} />
                       {/* <Image src={weatherIcon} width={100} height={100} /> */}
                       {/* <Image src={iconString} className={styles.weatherIcon} width={10} height={10} /> */}
+                      <div className={styles.mainDescription}>{w.main}</div>
                       <div className={styles.mainTemperature}>{data.main.temp} °C</div>
                       <div className={styles.feelsLike}>FEELS LIKE {data.main.feels_like} °C</div>
-                      <div className={styles.windGust}>{data.wind.gust}</div>
-                      <div className={styles.mainDescription}>{w.main}</div>
+                      <div className={styles.windGust}>WIND GUST {data.wind.gust} m/s</div>
                       <div className={styles.weatherDescription}>The forecast today are {w.description}.</div>
                     </div>
                   </div>
