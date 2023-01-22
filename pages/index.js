@@ -65,14 +65,15 @@ export default function Home() {
             <div className={styles.countryName}>{data.name}</div>
             {
               weather && weather.map((w, index) => {
-                const icon = data.weather[0].icon;
-                const src = `http://openweathermap.org/img/w/${icon}.png`;
+                // const icon = data.weather[0].icon;
+                // const src = `http://openweathermap.org/img/w/${icon}.png`;
 
                 return (
 
                   <div key={index}>
                     <div className={styles.justifyContainer}>
-                      <Image loader={() => src} src={src} width={50} height={50} />
+                      {/* <Image loader={() => src} src={src} width={50} height={50} /> */}
+
                       {/* <Image src={weatherIcon} width={100} height={100} /> */}
                       {/* <Image src={iconString} className={styles.weatherIcon} width={10} height={10} /> */}
                       <div className={styles.mainDescription}>{w.main}</div>
