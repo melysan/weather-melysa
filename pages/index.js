@@ -7,12 +7,12 @@ import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
+
 export default function Home() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState('');
   const [weather, setWeather] = useState();
   const [errorMessage, setErrorMessage] = useState('');
-
 
 
   let apiKey = "8194363f96ad5fe42294193fb37bd84f";
@@ -48,28 +48,44 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {errorMessage}
-        <input
-          value={location}
-          onChange={event => setLocation(event.target.value)}
-          placeholder="Where would you like to check the weather?"
-          onKeyDown={searchLocation}
-          type="text"
-        />
-        <div className={styles.countryName}>{data.name}</div>
-        {
-          weather && weather.map((w, index) => {
-            return (
-              <div key={index}>
-                <div>{data.main.temp} °C</div>
-                <div>{data.main.feels_like} °C</div>
-                <div>{data.wind.gust}</div>
-                <div>{w.description}</div>
-                <div>{w.main}</div>
-              </div>
-            )
-          })
-        }
+        <div className={styles.mainContainer}>
+          <div className={styles.columnContainer}>
+            <div className={styles.weatherChecker}>Weather Checker</div>
+            <input className={styles.inputBox}
+              value={location}
+              onChange={event => setLocation(event.target.value)}
+              placeholder="What city?"
+              onKeyDown={searchLocation}
+              type="text"
+            />
+            {errorMessage}
+          </div>
+          <div className={styles.rowContainer}>
+            <div className={styles.countryName}>{data.name}</div>
+            {
+              weather && weather.map((w, index) => {
+                const icon = data.weather[0].icon;
+                const src = `http://openweathermap.org/img/w/${icon}.png`;
+
+                return (
+
+                  <div key={index}>
+                    <div className={styles.columnContainer}>
+                      <Image loader={() => src} src={src} width={50} height={50} />
+                      {/* <Image src={weatherIcon} width={100} height={100} /> */}
+                      {/* <Image src={iconString} className={styles.weatherIcon} width={10} height={10} /> */}
+                      <div className={styles.mainTemperature}>{data.main.temp} °C</div>
+                      <div className={styles.feelsLike}>{data.main.feels_like} °C</div>
+                      <div className={styles.windGust}>{data.wind.gust}</div>
+                      <div className={styles.mainDescription}>{w.main}</div>
+                      <div className={styles.weatherDescription}>{w.description}</div>
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
       </main>
     </>
   )
