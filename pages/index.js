@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
@@ -42,10 +43,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Weather</title>
-        <meta name="Weather" content="Weather" />
+        <title>Weather Checker - Melysa Nguyen</title>
+        <meta name="Weather Forecast Checker" content="Weather Forecast Checker" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/melysa_icon.svg" />
       </Head>
       <main className={styles.main}>
         <div className={styles.mainContainer}>
@@ -87,6 +88,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <footer className={styles.footerStyle}><div className={styles.footerText}><Link href="https://github.com/melysan"><Image src="/melysa_logo.svg" alt="Melysa Nguyen Logo" width={100} height={50} /></Link></div></footer>
     </>
   )
 }
